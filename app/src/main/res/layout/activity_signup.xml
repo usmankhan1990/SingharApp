@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    tools:context=".screens.login.LoginActivity">
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@color/white"
+            android:paddingBottom="100dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/imgTop"
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/signup"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/txtTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Sign-up"
+                android:textColor="@color/dark_blue"
+                android:textSize="40sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/imgTop" />
+
+            <TextView
+                android:id="@+id/txtEmail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Email"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/txtTitle" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_email"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/email"
+                app:layout_constraintBottom_toBottomOf="@+id/edtEmail"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtEmail" />
+
+            <EditText
+                android:id="@+id/edtEmail"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edittext_grey_borderline"
+                android:fontFamily="@font/font_medium"
+                android:hint="Email ID"
+                android:inputType="textEmailAddress"
+                android:maxLength="50"
+                android:padding="5dp"
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/gray_holo_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_email"
+                app:layout_constraintTop_toBottomOf="@+id/txtEmail" />
+
+            <TextView
+                android:id="@+id/txtPhone"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Phone Number"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_phone"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/phone"
+                app:layout_constraintBottom_toBottomOf="@+id/edtPhone"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtPhone" />
+
+            <EditText
+                android:id="@+id/edtPhone"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="12dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edittext_grey_borderline"
+                android:fontFamily="@font/font_medium"
+                android:hint="03XXXXXXXXX"
+                android:inputType="phone"
+                android:maxLength="14"
+                android:padding="5dp"
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/gray_holo_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_email"
+                app:layout_constraintTop_toBottomOf="@+id/txtPhone" />
+
+            <TextView
+                android:id="@+id/txtPassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Password"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPhone" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_password"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/password"
+                app:layout_constraintBottom_toBottomOf="@+id/edtPassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtPassword" />
+
+            <EditText
+                android:id="@+id/edtPassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edittext_grey_borderline"
+                android:fontFamily="@font/font_medium"
+                android:hint="Password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:padding="5dp"
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/gray_holo_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_password"
+                app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+
+            <TextView
+                android:id="@+id/txtRePassword"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:fontFamily="@font/font_medium"
+                android:text="Re confirm Password"
+                android:textColor="@color/dark_blue"
+                android:textSize="20sp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtPassword" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/img_RePassword"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:layout_marginStart="20dp"
+                android:background="@drawable/password"
+                app:layout_constraintBottom_toBottomOf="@+id/edtRePassword"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/edtRePassword" />
+
+            <EditText
+                android:id="@+id/edtRePassword"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="25dp"
+                android:background="@drawable/edittext_grey_borderline"
+                android:fontFamily="@font/font_medium"
+                android:hint="Re type Password"
+                android:inputType="textPassword"
+                android:maxLength="20"
+                android:padding="5dp"
+                android:textColor="@color/dark_blue"
+                android:textColorHint="@color/gray_holo_dark"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_RePassword"
+                app:layout_constraintTop_toBottomOf="@+id/txtRePassword" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clIsSaloon"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="25dp"
+                android:layout_marginEnd="20dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/edtRePassword">
+
+                <TextView
+                    android:id="@+id/txtSaloon"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Are you a Beauty Parlour/Salon?"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="20sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.0"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/clSaloon"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="@drawable/unfilled_gray_corners"
+                    android:padding="0.5dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/txtSaloon">
+
+                    <FrameLayout
+                        android:id="@+id/flYes"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txtYes"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:fontFamily="@font/font_bold"
+                            android:text="Yes"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="24sp" />
+
+                    </FrameLayout>
+
+                    <FrameLayout
+                        android:id="@+id/flNo"
+                        android:layout_width="150dp"
+                        android:layout_height="50dp"
+                        android:padding="2dp"
+                        app:layout_constraintStart_toEndOf="@+id/flYes"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <TextView
+                            android:id="@+id/txtNo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_horizontal|center_vertical"
+                            android:fontFamily="@font/font_bold"
+                            android:text="No"
+                            android:textColor="@color/dark_blue"
+                            android:textSize="24sp" />
+
+                    </FrameLayout>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/clBeautySignUp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/clIsSaloon">
+
+                <TextView
+                    android:id="@+id/txtParlourName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Beauty Parlour/Salon Name"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_Parlour"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/name"
+                    app:layout_constraintBottom_toBottomOf="@+id/edtParlour"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/edtParlour" />
+
+                <EditText
+                    android:id="@+id/edtParlour"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/edittext_grey_borderline"
+                    android:fontFamily="@font/font_medium"
+                    android:hint="Beauty parlour name"
+                    android:inputType="text"
+                    android:maxLength="20"
+                    android:padding="5dp"
+                    android:textColor="@color/dark_blue"
+                    android:textColorHint="@color/gray_holo_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_Parlour"
+                    app:layout_constraintTop_toBottomOf="@+id/txtParlourName" />
+
+                <TextView
+                    android:id="@+id/txtAddress"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginTop="25dp"
+                    android:fontFamily="@font/font_medium"
+                    android:text="Beauty Parlour/Salon Address"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="20sp"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/edtParlour" />
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/img_Address"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:layout_marginStart="20dp"
+                    android:background="@drawable/shop"
+                    app:layout_constraintBottom_toBottomOf="@+id/edtAddress"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/edtAddress" />
+
+                <EditText
+                    android:id="@+id/edtAddress"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="25dp"
+                    android:background="@drawable/edittext_grey_borderline"
+                    android:fontFamily="@font/font_medium"
+                    android:hint="Please write office address"
+                    android:inputType="text"
+                    android:maxLength="150"
+                    android:padding="5dp"
+                    android:textColor="@color/dark_blue"
+                    android:textColorHint="@color/gray_holo_dark"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/img_Address"
+                    app:layout_constraintTop_toBottomOf="@+id/txtAddress" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+    <include
+        android:id="@+id/layout_loading"
+        layout="@layout/loading_dialog"
+        android:visibility="gone" />
+
+    <Button
+        android:id="@+id/btnSubmit"
+        style="@style/primaryButtonStyle"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:layout_marginBottom="20dp"
+        android:background="@drawable/rounded_shape"
+        android:text="Submit"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="22sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

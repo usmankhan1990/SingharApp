@@ -1,0 +1,22 @@
+<resources>
+    <string name="app_name">Singhar</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="back4app_server_url">https://parseapi.back4app.com/</string>
+    <string name="back4app_app_id">GUDOtWG4vGicKT6Qi7Z06EBO2sH93xLSSPQFKXhr</string>
+    <string name="back4app_client_key">janj6K0V46cW0rB1Q26xVe6iKdeXt64fHRDXHBZ2</string>
+    <string name="facebook_app_id">533967475101128</string>
+    <string name="facebook_client_token">2bc1cd9791a40d5b4776984b12942dca</string>
+    <string name="fb_login_protocol_scheme">fb533967475101128</string>
+<!--    <string name="terms_amp_conditions"><![CDATA[Terms & Conditions]]></string>-->
+    <string name="terms_amp_conditions"><u>Terms &amp; Condition</u></string>
+
+
+</resources>
