@@ -1,22 +1,19 @@
 package com.singhar.common
 
 import android.content.Context
-import android.view.Gravity
 import android.view.View
 import android.view.inputmethod.InputMethodManager
 import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
-import com.google.android.material.snackbar.Snackbar
 import com.parse.ParseException
 import com.parse.ParseUser
-
 
 fun login(user: String, pass: String, context: Context, callBack: (Boolean, String) -> Unit) {
     ParseUser.logInInBackground(
         user,
         pass
     ) { parseUser: ParseUser?, parseException: ParseException? ->
-        if (parseUser != null) {
+        if (parseUser != null && parseException == null) {
             Toast.makeText(context, "Welcome back $user !", Toast.LENGTH_LONG).show()
             callBack.invoke(true, "")
         } else {
@@ -30,6 +27,35 @@ fun login(user: String, pass: String, context: Context, callBack: (Boolean, Stri
 
         }
     }
+}
+
+fun signUp(
+    userEmail: String,
+    userName: String,
+    pass: String,
+    phoneNumber: String,
+    context: Context,
+    callBack: (Boolean, String) -> Unit
+) {
+    val user = ParseUser()
+    user.username = userEmail
+    user.email = userEmail
+    user.put("name", userName)
+    user.put("contactNumber", phoneNumber)
+    user.setPassword(pass)
+    user.signUpInBackground { parseException ->
+
+        if (parseException == null) {
+            Toast.makeText(context, "Successful Sign Up! Welcome $userName!", Toast.LENGTH_LONG)
+                .show()
+            callBack.invoke(true, "")
+        } else {
+            ParseUser.logOut()
+            callBack.invoke(
+                false, parseException.message ?: "Please try again letter"
+            )
+        }
+    };
 }
 
 fun forgotPassword(view: View, email: String, callBack: (Boolean) -> Unit) {

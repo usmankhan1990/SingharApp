@@ -1,11 +1,20 @@
 package com.singhar.screens.signup
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.ScrollView
+import android.widget.Toast
 import androidx.fragment.app.FragmentActivity
+import com.parse.ParseUser
+import com.singhar.MainActivity
 import com.singhar.R
+import com.singhar.common.*
+import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_signup.*
+import kotlinx.android.synthetic.main.activity_signup.edtEmail
+import kotlinx.android.synthetic.main.activity_signup.edtPassword
+import kotlinx.android.synthetic.main.activity_signup.layout_loading
 
 
 class SignUpActivity : FragmentActivity() {
@@ -44,8 +53,56 @@ class SignUpActivity : FragmentActivity() {
             isParlourSelected = false
         }
 
-        btnSubmit.setOnClickListener {
+        btnSubmit.setOnClickListener { view ->
 
+            val password = edtPassword.text.toString()
+            val userName = edtName.text.toString()
+            val phoneNumber = edtPhone.text.toString()
+
+            if (password.isEmpty()) {
+                Toast.makeText(
+                    view.context,
+                    "Kindly put valid Password", Toast.LENGTH_SHORT
+                ).show()
+            } else {
+                if (emailValidator(edtEmail, context = view.context) && userName.isNotEmpty() && phoneNumberValidator(edtPhone, context = view.context)) {
+
+                    val userEmail = edtEmail.text.toString()
+
+                    edtEmail.setTextColor(view.context.getColor(R.color.dark_blue))
+                    edtName.setTextColor(view.context.getColor(R.color.dark_blue))
+
+                    layout_loading.visibility = View.VISIBLE
+
+                    signUp(userEmail = userEmail, userName = userName, password, phoneNumber = phoneNumber, this) { isSuccess, message ->
+
+                        layout_loading.visibility = View.GONE
+
+                        if (isSuccess) {
+                            val intent = Intent(this, MainActivity::class.java)
+                            startActivity(intent)
+                            finish()
+                        } else {
+                            ParseUser.logOut()
+
+                            customDialog(
+                                context = view.context,
+                                title = "Sign Up Failed",
+                                description = "Please enter valid Email & Password.",
+                                drawable = R.drawable.alert,
+                                layoutInflater = layoutInflater
+                            )
+                        }
+                    }
+                } else {
+                    edtEmail.setTextColor(view.context.getColor(R.color.red))
+                    edtName.setTextColor(view.context.getColor(R.color.red))
+                    Toast.makeText(
+                        view.context,
+                        "Kindly put valid Password, Name, Phone Number & Email", Toast.LENGTH_SHORT
+                    ).show()
+                }
+            }
         }
 
     }

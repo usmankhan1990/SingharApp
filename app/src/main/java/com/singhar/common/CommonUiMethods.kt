@@ -46,3 +46,14 @@ fun emailValidator(editText: EditText, context: Context): Boolean {
         false
     }
 }
+
+fun phoneNumberValidator(editText: EditText, context: Context): Boolean {
+
+    val emailToText = editText.text.toString()
+    return if (emailToText.isNotEmpty() && emailToText.length >= 11) {
+        true
+    } else {
+        Toast.makeText(context, "Kindly put valid contact number", Toast.LENGTH_SHORT).show()
+        false
+    }
+}
